@@ -1,0 +1,136 @@
+.badges-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.badge-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.badge-item:hover {
+    transform: scale(1.05);
+}
+
+.badge-item.earned {
+    border-color: #228B22;
+}
+
+.badge-item.unearned {
+    border-color: grey;
+    opacity: 0.7;
+}
+
+.badge-item:hover.unearned {
+    opacity: 1;
+}
+
+.badge-image-container {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.badge-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.badge-details {
+    text-align: center;
+}
+
+.badge-name {
+    margin: 0;
+    font-size: 1em;
+}
+
+.badge-description {
+    font-size: 0.9em;
+}
+
+@media (min-width: 768px) {
+    .badge-item {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (min-width: 992px) {
+    .badge-item {
+        width: calc(25% - 20px);
+    }
+}
+
+#badges-filter-sort-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#badge-filter {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#badge-sort {
+    padding: 10px;
+}
+
+/* Additional styles for dashboard */
+
+#badges-dashboard {
+    margin-top: 20px;
+}
+
+.badge-progress-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.badge-progress-container {
+    height: 20px;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.badge-progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.4s ease;
+}
+
+.badge-progress-percent {
+    min-width: 50px;
+    text-align: right;
+}
+
+.recent-badge-name {
+    font-weight: bold;
+}
+
+.badge-earned-date {
+    font-size: 0.8em;
+    color: #666;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+/* Focus state for interactive elements */
+a:focus, button:focus, input[type="text"]:focus, select:focus {
+    outline: 3px solid #5b9dd9;
+    outline-offset: 2px;
+}

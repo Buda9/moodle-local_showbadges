@@ -1,0 +1,21 @@
+<div id='badges-dashboard'>
+    <h2>My Badge Progress</h2>
+    {{#badges}}
+    <div class='badge-progress-item {{#earned}}earned{{/earned}}{{^earned}}unearned{{/earned}}'>
+        <span class='badge-name'>{{name}}</span>
+        <div class='badge-progress-container'>
+            <div class='badge-progress-bar' style='width: {{userprogress}}%;'></div>
+        </div>
+        <span class='badge-progress-percent'>{{userprogress}}%</span>
+    </div>
+    {{/badges}}
+    <h2>Recent Achievements</h2>
+    <ul>
+        {{#recentAchievements}}
+        <li>
+            <span class='recent-badge-name'>{{name}}</span>
+            <span class='badge-earned-date'>Earned on: {{dateearned}}</span>
+        </li>
+        {{/recentAchievements}}
+    </ul>
+</div>

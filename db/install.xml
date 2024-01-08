@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/showbadges/db" VERSION="20200303" COMMENT="XMLDB file for Moodle local plugin 'local_showbadges'">
+  <TABLES>
+    <TABLE NAME="local_showbadges_progress" COMMENT="Table to store user badge progress">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" NOTNULL="true" COMMENT="User ID"/>
+        <FIELD NAME="badgeid" TYPE="int" NOTNULL="true" COMMENT="Badge ID"/>
+        <FIELD NAME="progress" TYPE="number" LENGTH="10,2" DECIMALS="2" NOTNULL="true" COMMENT="Progress towards achievement, percentage"/>
+        <FIELD NAME="dateearned" TYPE="int" NOTNULL="false" COMMENT="Unix timestamp of when the badge was earned"/>
+        <FIELD NAME="dateissued" TYPE="int" NOTNULL="false" COMMENT="Unix timestamp of when the badge was issued"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+        <KEY NAME="badgeid" TYPE="foreign" FIELDS="badgeid" REFTABLE="badge" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="userid-badgeid" UNIQUE="true" FIELDS="userid, badgeid"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
