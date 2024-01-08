@@ -1,4 +1,4 @@
-# Moodle Local Show Badges Plugin
+# Show All Badges On One Page - Moodle Plugin
 
 [WIP] DON'T INSTALL! (NEED HELP WITH INSTALL.XML)[https://moodle.org/mod/forum/discuss.php?d=454153]
 
