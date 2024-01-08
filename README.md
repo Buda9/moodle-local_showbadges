@@ -1,21 +1,23 @@
 # Moodle Local Show Badges Plugin
 
+[WIP] DON'T INSTALL! (NEED HELP WITH INSTALL.XML)[https://moodle.org/mod/forum/discuss.php?d=454153]
+
 ## Description
 
-The `moodle-local_showbadges` is a Moodle LOCAL plugin designed to enhance the way badges are displayed within a Moodle site. This plugin allows users to see all available badges, including their images, names, and descriptions, on a single responsive page. It adds functionality to differentiate between earned and unearned badges using color changes and opacity effects.
+This is a Moodle local plugin designed to enhance the way badges are displayed within a Moodle site. This plugin allows users to see all available badges, including badge images, names, and descriptions, on a single responsive page. It adds functionality to differentiate between earned and unearned badges using color changes and opacity effects.
 
 Furthermore, the plugin integrates a dashboard for tracking user progress towards badge achievement and displays badges in a responsive layout suitable for various devices.
 
 Key functionalities include:
 - Advanced filtering and sorting of badges using client-side JavaScript.
 - Periodic updating of badge achievement data via a cron job.
-- Compatibility tested with Moodle 4.3 using core development technologies.
+- Compatibility tested with Moodle 4.3.
 
 ## Installation
 
 To install the plugin, follow the standard Moodle plugin installation process:
 1. Place the `showbadges` folder inside your Moodle `local` directory.
-2. Log in to your Moodle site as an admin, and Moodle will automatically run the installation.
+2. Log in to your Moodle site as an admin, open Notifications and Moodle will automatically run the installation.
 
 ## Technologies
 - PHP
