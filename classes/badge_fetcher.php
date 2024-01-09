@@ -85,6 +85,25 @@ class badge_fetcher {
 
         return $CFG->wwwroot . '/path/to/default/image.png';
     }
+
+    public static function fetch_recent_badges($userid, $limit = 5) {
+        global $DB;
+
+        $sql = "SELECT bi.badgeid, b.name, b.description, bi.dateissued
+                FROM {badge_issued} bi
+                INNER JOIN {badge} b ON bi.badgeid = b.id
+                WHERE bi.userid = :userid
+                ORDER BY bi.dateissued DESC";
+
+        $params = ['userid' => $userid];
+        $recent_badges = $DB->get_records_sql($sql, $params, 0, $limit);
+
+        foreach ($recent_badges as $badge) {
+            $badge->imageurl = self::get_badge_image_url($badge->badgeid);
+        }
+
+        return $recent_badges;
+    }
 }
 
 ?>

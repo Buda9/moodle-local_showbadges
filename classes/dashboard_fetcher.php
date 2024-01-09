@@ -7,7 +7,7 @@ defined('MOODLE_INTERNAL') || die();
 class dashboard_fetcher {
     public static function fetch_user_progress($userid) {
         $badge_progress = badge_fetcher::fetch_user_badge_progress($userid);
-        $recent_badges = badge_fetcher::fetch_recent_badges($userid);
+        $recent_badges = badge_fetcher::fetch_recent_badges($userid, 5); // Call to fetch_recent_badges with proper parameters
 
         return [
             'progress' => $badge_progress,

@@ -35,8 +35,7 @@ foreach ($all_badges as $badge) {
 echo '</div>';
 
 // Add the script link for future interactivity
-echo '<script src="' . $CFG->wwwroot . '/local/showbadges/sortfilter.js"></script>';
+echo '<script src="' . $CFG->wwwroot . '/lib/amd/src/sortfilter.min.js"></script>';
+echo '<script src="' . $CFG->wwwroot . '/local/showbadges/scripts/dashboard.js"></script>';
+
 echo $OUTPUT->footer();
-?><script src="<?php echo $CFG->wwwroot ?>/local/showbadges/scripts/dashboard.js"></script>
-<div id="user-progress-dashboard"></div>
-<div id="recent-badges-dashboard"></div>
