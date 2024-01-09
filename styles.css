@@ -10,6 +10,21 @@ justify-items:center;
 margin-top:30px
 }
 
+@media (max-width: 1024px) {
+.user-badge-container {
+grid-template-columns:repeat(3,1fr)
+}}
+
+@media (max-width: 768px) {
+.user-badge-container {
+grid-template-columns:repeat(2,1fr)
+}}
+
+@media (max-width: 480px) {
+.user-badge-container {
+grid-template-columns:1fr
+}}
+
 .user-badge {
 display: inline-grid;
 grid-auto-rows: minmax(70px, auto);
@@ -26,64 +41,9 @@ height:100%;
 width:100%
 }
 
-@media (max-width: 1024px) {
-.user-badge-container {
-grid-template-columns:repeat(3,1fr)
-}
-}
-
-@media (max-width: 768px) {
-.user-badge-container {
-grid-template-columns:repeat(2,1fr)
-}
-}
-
-@media (max-width: 480px) {
-.user-badge-container {
-grid-template-columns:1fr
-}
-}
-
-.user-badge-description {
-color:#666;
-font-size:1em;
-font-weight:500
-}
-
-.user-badge-image img {
-height:auto;
-max-width:100%;
-width:100px
-}
-
-.user-badge-issued-date {
-color:#666;
-font-size:.8em
-}
-
-.user-badge-name {
-background-color:transparent;
-color:#9000D9;
-font-size:22px;
-font-weight:600;
-margin:8px 0;
-text-decoration:none;
-transition:all .2s ease-in-out;
-word-break:break-word
-}
-
-.user-badge-progress,.user-badge-recent {
-border:1px solid #ddd;
-border-radius:4px;
-margin:10px;
-padding:10px;
-text-align:center;
-width:200px
-}
-
-.user-badge-progress-percentage {
-font-weight:700;
-margin-top:5px
+.user-badge:hover {
+box-shadow:0 5px 15px #0003;
+transform:scale(1.05)
 }
 
 .user-badge.earned-badge {
@@ -102,15 +62,25 @@ transition: all 0.5s ease;
 opacity:.8
 }
 
-.user-badge:hover {
-box-shadow:0 5px 15px #0003;
-transform:scale(1.05)
+.user-badge-image img {
+height:auto;
+max-width:100%;
+width:100px
 }
 
-.user-progress-container,.user-recent-badges-container {
-display:flex;
-flex-wrap:wrap;
-justify-content:space-around;
-margin:20px auto;
-max-width:960px
+.user-badge-name {
+background-color:transparent;
+color:#9000D9;
+font-size:22px;
+font-weight:600;
+margin:8px 0;
+text-decoration:none;
+transition:all .2s ease-in-out;
+word-break:break-word
+}
+
+.user-badge-description {
+color:#666;
+font-size:1em;
+font-weight:500
 }
