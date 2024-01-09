@@ -7,6 +7,5 @@ $PAGE->set_title(get_string('pluginname', 'local_showbadges'));
 $PAGE->set_heading(get_string('pluginname', 'local_showbadges'));
 
 echo $OUTPUT->header();
-// Content generating code goes here
-
+// ... (the rest of the code displaying the content goes here, if any)
 echo $OUTPUT->footer();
