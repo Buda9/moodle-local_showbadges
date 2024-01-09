@@ -1,4 +1,4 @@
-.badge-container {
+.user-badge-container {
 align-content:center;
 align-items:center;
 display:grid;
@@ -10,7 +10,7 @@ justify-items:center;
 margin-top:30px
 }
 
-.badge {
+.user-badge {
 display: inline-grid;
 grid-auto-rows: minmax(70px, auto);
 align-items: start;
@@ -27,30 +27,30 @@ width:100%
 }
 
 @media (max-width: 1024px) {
-.badge-container {
+.user-badge-container {
 grid-template-columns:repeat(3,1fr)
 }
 }
 
 @media (max-width: 768px) {
-.badge-container {
+.user-badge-container {
 grid-template-columns:repeat(2,1fr)
 }
 }
 
 @media (max-width: 480px) {
-.badge-container {
+.user-badge-container {
 grid-template-columns:1fr
 }
 }
 
-.badge-description {
+.user-badge-description {
 color:#666;
-font-size:1.25em;
+font-size:1em;
 font-weight:500
 }
 
-.badge-image img {
+.user-badge-image img {
 height:auto;
 max-width:100%;
 width:100px
@@ -61,7 +61,7 @@ color:#666;
 font-size:.8em
 }
 
-.badge-name {
+.user-badge-name {
 background-color:transparent;
 color:#9000D9;
 font-size:22px;
@@ -72,7 +72,7 @@ transition:all .2s ease-in-out;
 word-break:break-word
 }
 
-.badge-progress,.badge-recent {
+.user-badge-progress,.user-badge-recent {
 border:1px solid #ddd;
 border-radius:4px;
 margin:10px;
@@ -81,29 +81,29 @@ text-align:center;
 width:200px
 }
 
-.badge-progress-percentage {
+.user-badge-progress-percentage {
 font-weight:700;
 margin-top:5px
 }
 
-.badge.earned-badge {
+.user-badge.earned-badge {
 border:3px solid green
 }
 
-.badge.unearned-badge {
+.user-badge.unearned-badge {
 opacity:.5
 }
 
-.badge.unearned-badge:hover {
+.user-badge.unearned-badge:hover {
 opacity:.8
 }
 
-.badge:hover {
+.user-badge:hover {
 box-shadow:0 5px 15px #0003;
 transform:scale(1.05)
 }
 
-.progress-container,.recent-badges-container {
+.user-progress-container,.user-recent-badges-container {
 display:flex;
 flex-wrap:wrap;
 justify-content:space-around;

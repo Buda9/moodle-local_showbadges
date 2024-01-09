@@ -18,15 +18,15 @@ foreach ($user_badges as $badge) {
 
 echo $OUTPUT->header();
 
-// Add the HTML and link to our custom CSS
+// Add the HTML and link to our custom CSS with lazy loading for images
 echo '<link rel="stylesheet" type="text/css" href="' . $CFG->wwwroot . '/local/showbadges/styles.css">';
-echo '<div id="badge-container" class="badge-container">';
+echo '<div id="user-badge-container" class="user-badge-container">';
 foreach ($all_badges as $badge) {
     $earned_class = isset($user_badge_ids[$badge->id]) ? 'earned-badge' : 'unearned-badge';
-    echo '<div class="badge ' . $earned_class . '" data-badgeid="'.$badge->id.'" data-dateissued="'.($badge->dateissued ?? '0').'">'
-        . '<div class="badge-image"><img src="'.$badge->imageurl.'" alt="'.s($badge->name).'"></div>'
-        . '<div class="badge-name">'.s($badge->name).'</div>'
-        . '<div class="badge-description">'.s($badge->description).'</div>'
+    echo '<div class="user-badge ' . $earned_class . '" data-badgeid="'.$badge->id.'" data-dateissued="'.($badge->dateissued ?? '0').'">'
+        . '<div class="user-badge-image"><img src="'.$badge->imageurl.'" alt="'.s($badge->name).'" loading="lazy"></div>'
+        . '<div class="user-badge-name">'.s($badge->name).'</div>'
+        . '<div class="user-badge-description">'.s($badge->description).'</div>'
         . '</div>';
 }
 echo '</div>';

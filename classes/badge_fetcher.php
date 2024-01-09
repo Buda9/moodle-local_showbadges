@@ -23,12 +23,14 @@ class badge_fetcher {
     }
 
     public static function fetch_user_badges($userid) {
-        global $DB;
+        global $DB, $CFG;
 
-        $sql = "SELECT b.id, b.name, b.description, ub.dateissued, ub.badgeid 
-                FROM {badge_issued} ub 
-                JOIN {badge} b ON ub.badgeid = b.id 
-                WHERE ub.userid = :userid";
+        $cache = \cache::make('local_showbadges', 'user_badges');
+        if ($user_badges = $cache->get($userid)) {
+            return $user_badges;
+        }
+
+        $sql = "SELECT b.id, b.name, b.description, ub.dateissued, ub.badgeid, p.progress FROM {badge_issued} ub JOIN {badge} b ON ub.badgeid = b.id LEFT JOIN {local_showbadges_progress} p ON b.id = p.badgeid AND p.userid = ub.userid WHERE ub.userid = :userid";
 
         $params = ['userid' => $userid];
         $user_badges = $DB->get_records_sql($sql, $params);
@@ -37,6 +39,8 @@ class badge_fetcher {
             $badge->imageurl = self::get_badge_image_url($badge->badgeid);
         }
 
+        $cache->set($userid, $user_badges);
+        
         return $user_badges;
     }
 
@@ -58,34 +62,6 @@ class badge_fetcher {
         return $progress_data;
     }
 
-    private static function get_badge_image_url($badgeid) {
-        global $CFG, $DB;
-
-        $fs = get_file_storage();
-
-        $badge = new \badge($badgeid);
-        $contextid = ($badge->type == BADGE_TYPE_COURSE) ? \context_course::instance($badge->courseid)->id : \context_system::instance()->id;
-
-        $files = $fs->get_area_files($contextid, 'badges', 'badgeimage', $badgeid);
-        foreach ($files as $file) {
-            if ($file->is_valid_image()) {
-                $filename = $file->get_filename();
-
-                // Uklonite ekstenziju '.png' samo ako postoji
-                $fileinfo = pathinfo($filename);
-                if (strtolower($fileinfo['extension']) == 'png') {
-                    $filename = $fileinfo['filename'];
-                }
-
-                return \moodle_url::make_pluginfile_url($file->get_contextid(), $file->get_component(), 
-                                                        $file->get_filearea(), $file->get_itemid(), 
-                                                        $file->get_filepath(), $filename)->out();
-            }
-        }
-
-        return $CFG->wwwroot . '/path/to/default/image.png';
-    }
-
     public static function fetch_recent_badges($userid, $limit = 5) {
         global $DB;
 
@@ -103,6 +79,33 @@ class badge_fetcher {
         }
 
         return $recent_badges;
+    }
+
+    private static function get_badge_image_url($badgeid) {
+        global $CFG, $DB;
+
+        $fs = get_file_storage();
+
+        $badge = new \badge($badgeid);
+        $contextid = ($badge->type == BADGE_TYPE_COURSE) ? \context_course::instance($badge->courseid)->id : \context_system::instance()->id;
+
+        $files = $fs->get_area_files($contextid, 'badges', 'badgeimage', $badgeid);
+        foreach ($files as $file) {
+            if ($file->is_valid_image()) {
+                $filename = $file->get_filename();
+
+                $fileinfo = pathinfo($filename);
+                if (strtolower($fileinfo['extension']) == 'png') {
+                    $filename = $fileinfo['filename'];
+                }
+
+                return \moodle_url::make_pluginfile_url($file->get_contextid(), $file->get_component(), 
+                                                        $file->get_filearea(), $file->get_itemid(), 
+                                                        $file->get_filepath(), $filename)->out();
+            }
+        }
+
+        return $CFG->wwwroot . '/path/to/default/image.png';
     }
 }
 
