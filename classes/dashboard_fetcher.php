@@ -15,12 +15,17 @@ class dashboard_fetcher {
         ];
     }
 
-    public static function fetch_recent_badges($userid) {
+    public static function fetch_recent_badges($userid, $limit = 5) {
         global $DB;
+    
+        $sql = "SELECT bi.badgeid, b.name, b.description, bi.dateissued
+                FROM {badge_issued} bi
+                INNER JOIN {badge} b ON bi.badgeid = b.id
+                WHERE bi.userid = :userid
+                ORDER BY bi.dateissued DESC
+                LIMIT :limit";
 
-        $sql = "SELECT bi.badgeid, b.name, b.description, bi.dateissued\n                FROM {badge_issued} bi\n                INNER JOIN {badge} b ON bi.badgeid = b.id\n                WHERE bi.userid = :userid\n                ORDER BY bi.dateissued DESC\n                LIMIT 5"; // INPUT_REQUIRED {Define the limit of recent badges to be fetched}
-
-        $params = ['userid' => $userid];
+        $params = ['userid' => $userid, 'limit' => $limit];
         $recent_badges = $DB->get_records_sql($sql, $params);
 
         foreach ($recent_badges as $badge) {
