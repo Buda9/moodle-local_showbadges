@@ -1,4 +1,4 @@
-# Moodle Local Plugin: Show Badges
+# Moodle Local Plugin: Show/Display All Badges
 
 The `moodle-local_showbadges` plugin is designed to enhance the Moodle learning management system by displaying all available Moodle badges, as well as user-specific badge progress within a single, responsive interface.
 
@@ -28,19 +28,13 @@ The following is a list of files included in the project with their respective r
 - `index.php`: The main entry point for the plugin that renders the badge display page.
 - `lib.php`: Placeholder for callback functions and additional library functions.
 - `version.php`: Contains versioning information for the plugin.
-- `lang/en/local_showbadges.php`: Language strings for the plugin.
 - `db/install.php`: Sets up the database schema upon installation.
 - `db/install.xml`: XML database schema definition.
 - `db/upgrade.php`: Manages database schema upgrades.
 - `classes/badge_fetcher.php`: Contains logic for fetching badge information.
 - `styles.css`: Defines the styling for the badge display.
-- `sortfilter.js`: Provides client-side filtering and sorting capabilities.
 
-Participation in the development of `moodle-local_showbadges` is encouraged. Developers are advised to follow Moodle's coding guidelines and submit pull requests for any proposed changes.
-
-## Testing
-
-Use `testbadgefetcher.php` to test the badge fetching functionality independently.
+PR's are welcome!
 
 ## License
 
