@@ -2,15 +2,19 @@
 
 The `moodle-local_showbadges` plugin is designed to enhance the Moodle learning management system by displaying all available Moodle badges, as well as user-specific badge progress within a single, responsive interface.
 
+![Screenshot_11](https://github.com/Buda9/moodle-local_showbadges/assets/1422662/9dae4450-3782-4819-80e9-dba775abc496)
+
 ## Features
 
 - Display of all available Moodle badges with images, names, and descriptions.
 - Visual differentiation between earned and unearned badges.
-- A user dashboard to track progress toward badge completion.
-- A responsive layout to accommodate various devices.
-- Advanced filter and sorting functionality.
-- Compatibility with Moodle version 4.3.
+- Responsive layout
+- Compatibility with Moodle 4.3.
 - Built with PHP, HTML, CSS3, JavaScript, MySQL and utilizes cron jobs for periodic updates.
+
+## TODO:
+- Advanced filter and sorting functionality.
+- A user dashboard to track progress toward badge completion.
 
 ## Installation
 
