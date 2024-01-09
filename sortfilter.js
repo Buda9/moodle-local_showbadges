@@ -18,7 +18,7 @@ function filterBadges(searchTerm) {
         }
     });
 }
-
+/*
 function sortBadges(sortKey) {
     let badges = Array.from(document.querySelectorAll('.badge'));
     badges = badges.sort((a, b) => {
@@ -31,7 +31,7 @@ function sortBadges(sortKey) {
             valB = b.dataset.dateissued || '0';
         }
         return valA.localeCompare(valB, navigator.languages[0] || navigator.language, {numeric: true});
-    });
+    });*/
 
     // Empty the container and append sorted elements
     badgeContainer.innerHTML = '';

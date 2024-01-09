@@ -22,8 +22,8 @@ echo $OUTPUT->header();
 echo '<link rel="stylesheet" type="text/css" href="' . $CFG->wwwroot . '/local/showbadges/styles.css">';
 echo '<div id="filter-sort-container" class="filter-sort-container">';
 echo '<input type="text" id="badge-search" placeholder="Search badges..." oninput="searchBadges(this.value)">';
-echo '<button onclick="sortBadges(\'name\')">Sort by name</button>';
-echo '<button onclick="sortBadges(\'date\')">Sort by date</button>';
+/*echo '<button onclick="sortBadges(\'name\')">Sort by name</button>';
+echo '<button onclick="sortBadges(\'date\')">Sort by date</button>';*/
 echo '</div>';
 echo '<div id="badge-container" class="badge-container">';
 foreach ($all_badges as $badge) {
@@ -32,7 +32,7 @@ foreach ($all_badges as $badge) {
         . '<div class="badge-image"><img src="'.$badge->imageurl.'" alt="'.s($badge->name).'"></div>'
         . '<div class="badge-name">'.s($badge->name).'</div>'
         . '<div class="badge-description">'.s($badge->description).'</div>'
-      . '</div>';
+        . '</div>';
 }
 echo '</div>';
 
