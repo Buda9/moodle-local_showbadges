@@ -18,22 +18,6 @@ function filterBadges(searchTerm) {
         }
     });
 }
-/*
-function sortBadges(sortKey) {
-    let badges = Array.from(document.querySelectorAll('.badge'));
-    badges = badges.sort((a, b) => {
-        let valA, valB;
-        if (sortKey === 'name') {
-            valA = a.querySelector('.badge-name').textContent;
-            valB = b.querySelector('.badge-name').textContent;
-        } else if (sortKey === 'date') {
-            valA = a.dataset.dateissued || '0';
-            valB = b.dataset.dateissued || '0';
-        }
-        return valA.localeCompare(valB, navigator.languages[0] || navigator.language, {numeric: true});
-    });*/
 
-    // Empty the container and append sorted elements
     badgeContainer.innerHTML = '';
     badges.forEach(badge => badgeContainer.appendChild(badge));
-}

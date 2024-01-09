@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadDashboard() {
+    if (!window.fetch) {
+        console.error('Fetch API not supported by this browser. Please include a polyfill.');
+        return;
+    }
+
     fetch('local/showbadges/fetch_dashboard.php')
     .then(response => response.json())
     .then(data => {

@@ -1,81 +1,109 @@
-/* styles.css content */
-.badge-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .badge {
-    border: 2px solid #ddd;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 12px;
-    width: 200px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    flex-direction: column;
-    justify-content: flex-start;
+background:none;
+border:1px solid #051f4e29;
+border-radius:12px;
+box-shadow:none;
+height:100%;
+margin:10px;
+padding:24px;
+text-align:center;
+transition:all .3s ease-in-out;
+width:100%
 }
 
-.badge-image img {
-    width: 100px;
-    height: auto;
-    max-width: 100px;
+.badge-container {
+align-content:center;
+align-items:center;
+display:grid;
+gap:30px 30px;
+grid-auto-flow:row;
+grid-template-columns:repeat(4,1fr);
+justify-content:center;
+justify-items:center;
+margin-top:30px
 }
 
-.badge-name {
-    font-weight: bold;
-    margin-top: 10px;
+@media (max-width: 1024px) {
+.badge-container {
+grid-template-columns:repeat(3,1fr)
+}
+}
+
+@media (max-width: 768px) {
+.badge-container {
+grid-template-columns:repeat(2,1fr)
+}
+}
+
+@media (max-width: 480px) {
+.badge-container {
+grid-template-columns:1fr
+}
 }
 
 .badge-description {
-    font-size: 1em;
-    color: #545454;
+color:#666;
+font-size:1.25em;
+font-weight:500
 }
 
-.earned-badge {
-    border-color: green;
-}
-
-.unearned-badge {
-    opacity: 0.5;
-}
-
-.badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.badge.unearned-badge:hover {
-    opacity: 0.8;
-}
-
-/* Dashboard Styles */
-.progress-container, 
-.recent-badges-container {
-    margin: 20px auto;
-    max-width: 960px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.badge-progress,
-.badge-recent {
-    margin: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-}
-
-.badge-progress-percentage {
-    font-weight: bold;
-    margin-top: 5px;
+.badge-image img {
+height:auto;
+max-width:100%;
+width:100px
 }
 
 .badge-issued-date {
-    font-size: 0.8em;
-    color: #666;
+color:#666;
+font-size:.8em
+}
+
+.badge-name {
+background-color:transparent;
+color:#9000D9;
+font-size:22px;
+font-weight:600;
+margin:14px 0;
+text-decoration:none;
+transition:all .2s ease-in-out;
+word-break:break-word
+}
+
+.badge-progress,.badge-recent {
+border:1px solid #ddd;
+border-radius:4px;
+margin:10px;
+padding:10px;
+text-align:center;
+width:200px
+}
+
+.badge-progress-percentage {
+font-weight:700;
+margin-top:5px
+}
+
+.badge.earned-badge {
+border:3px solid green
+}
+
+.badge.unearned-badge {
+opacity:.5
+}
+
+.badge.unearned-badge:hover {
+opacity:.8
+}
+
+.badge:hover {
+box-shadow:0 5px 15px #0003;
+transform:scale(1.05)
+}
+
+.progress-container,.recent-badges-container {
+display:flex;
+flex-wrap:wrap;
+justify-content:space-around;
+margin:20px auto;
+max-width:960px
 }
