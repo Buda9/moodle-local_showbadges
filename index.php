@@ -21,7 +21,7 @@ echo $OUTPUT->header();
 // Add the HTML and link to our custom CSS
 echo '<link rel="stylesheet" type="text/css" href="' . $CFG->wwwroot . '/local/showbadges/styles.css">';
 echo '<div id="filter-sort-container" class="filter-sort-container">';
-echo '<input type="text" id="badge-search" placeholder="Search badges..." oninput="searchBadges(this.value)">';
+echo '<input type="text" id="badge-search" placeholder="Traži postignuća..." oninput="searchBadges(this.value)">';
 echo '</div>';
 echo '<div id="badge-container" class="badge-container">';
 foreach ($all_badges as $badge) {
