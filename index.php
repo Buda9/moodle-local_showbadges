@@ -19,12 +19,16 @@ foreach ($user_badges as $badge) {
 echo $OUTPUT->header();
 
 // Add the HTML and link to our custom CSS
-// [OLD CODE] Output of $OUTPUT->header()
 echo '<link rel="stylesheet" type="text/css" href="' . $CFG->wwwroot . '/local/showbadges/styles.css">';
+echo '<div id="filter-sort-container" class="filter-sort-container">';
+echo '<input type="text" id="badge-search" placeholder="Search badges..." oninput="searchBadges(this.value)">';
+echo '<button onclick="sortBadges(\'name\')">Sort by name</button>';
+echo '<button onclick="sortBadges(\'date\')">Sort by date</button>';
+echo '</div>';
 echo '<div id="badge-container" class="badge-container">';
 foreach ($all_badges as $badge) {
     $earned_class = isset($user_badge_ids[$badge->id]) ? 'earned-badge' : 'unearned-badge';
-    echo '<div class="badge ' . $earned_class . '" data-badgeid="'.$badge->id.'">'
+    echo '<div class="badge ' . $earned_class . '" data-badgeid="'.$badge->id.'" data-dateissued="'.($badge->dateissued ?? '0').'">'
         . '<div class="badge-image"><img src="'.$badge->imageurl.'" alt="'.s($badge->name).'"></div>'
         . '<div class="badge-name">'.s($badge->name).'</div>'
         . '<div class="badge-description">'.s($badge->description).'</div>'
@@ -33,7 +37,6 @@ foreach ($all_badges as $badge) {
 echo '</div>';
 
 // Add the script link for future interactivity
-// [OLD CODE] Output of $OUTPUT->footer()
-echo '<script src="' . $CFG->wwwroot . '/local/showbadges/scripts.js"></script>';
+echo '<script src="' . $CFG->wwwroot . '/local/showbadges/sortfilter.js"></script>';
 echo $OUTPUT->footer();
 ?>
