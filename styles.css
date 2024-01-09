@@ -91,7 +91,11 @@ border:3px solid green
 }
 
 .user-badge.unearned-badge {
-opacity:.5
+opacity:.5;
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+filter: grayscale(100%);
+transition: all 0.5s ease;
 }
 
 .user-badge.unearned-badge:hover {
