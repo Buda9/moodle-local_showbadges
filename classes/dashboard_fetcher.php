@@ -17,7 +17,7 @@ class dashboard_fetcher {
 
     public static function fetch_recent_badges($userid, $limit = 5) {
         global $DB;
-    
+
         $sql = "SELECT bi.badgeid, b.name, b.description, bi.dateissued
                 FROM {badge_issued} bi
                 INNER JOIN {badge} b ON bi.badgeid = b.id

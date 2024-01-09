@@ -37,4 +37,6 @@ echo '</div>';
 // Add the script link for future interactivity
 echo '<script src="' . $CFG->wwwroot . '/local/showbadges/sortfilter.js"></script>';
 echo $OUTPUT->footer();
-?>
+?><script src="<?php echo $CFG->wwwroot ?>/local/showbadges/scripts/dashboard.js"></script>
+<div id="user-progress-dashboard"></div>
+<div id="recent-badges-dashboard"></div>
