@@ -23,7 +23,7 @@ The `moodle-local_showbadges` plugin is designed to enhance the Moodle learning 
 
 ## Usage
 
-Once installed, the plugin will display a new page within Moodle where users can view and filter all badges. Users can see their earned badges highlighted, and their progress towards unearned badges.
+Once installed, visit /local/showbadges/index.php where your users can view all available badges on Moodle. Earned badges will be highlighted with green border.
 
 ## Development and Contribution
 
