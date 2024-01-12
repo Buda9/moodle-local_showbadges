@@ -26,15 +26,15 @@ grid-template-columns:1fr
 }}
 
 .user-badge {
+background-color: #fff;
 display: inline-grid;
 grid-auto-rows: minmax(60px,auto);
-border: 1px solid #051f4e29;
+border: 1px solid #D8D8D8;
 border-radius: 12px;
-box-shadow: none;
 margin: 10px;
 padding: 24px;
 text-align: center;
-transition: all .3s ease-in-out;
+transition: all 0.2s ease-in-out;
 height: 100%;
 width: 100%;
 align-items: start;
@@ -42,8 +42,7 @@ align-content: baseline;
 }
 
 .user-badge:hover {
-box-shadow:0 5px 15px #0003;
-transform:scale(1.05)
+transform: translateY(-3px);
 }
 
 .user-badge.earned-badge {
@@ -51,7 +50,7 @@ border:3px solid green
 }
 
 .user-badge.unearned-badge {
-opacity:.5;
+opacity:.7;
 -webkit-filter: grayscale(100%);
 -moz-filter: grayscale(100%);
 filter: grayscale(100%);
@@ -59,7 +58,7 @@ transition: all 0.5s ease;
 }
 
 .user-badge.unearned-badge:hover {
-opacity:.8
+opacity:.85
 }
 
 .user-badge-image img {
