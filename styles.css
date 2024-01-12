@@ -27,18 +27,18 @@ grid-template-columns:1fr
 
 .user-badge {
 display: inline-grid;
-grid-auto-rows: minmax(70px, auto);
+grid-auto-rows: minmax(60px,auto);
+border: 1px solid #051f4e29;
+border-radius: 12px;
+box-shadow: none;
+margin: 10px;
+padding: 24px;
+text-align: center;
+transition: all .3s ease-in-out;
+height: 100%;
+width: 100%;
 align-items: start;
-background:none;
-border:1px solid #051f4e29;
-border-radius:12px;
-box-shadow:none;
-margin:10px;
-padding:24px;
-text-align:center;
-transition:all .3s ease-in-out;
-height:100%;
-width:100%
+align-content: baseline;
 }
 
 .user-badge:hover {
@@ -83,4 +83,9 @@ word-break:break-word
 color:#666;
 font-size:1em;
 font-weight:500
+}
+
+.achievement-info {
+    font-size: 18px;
+    margin-top: 20px;
 }
