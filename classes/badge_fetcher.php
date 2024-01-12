@@ -25,12 +25,11 @@ class badge_fetcher {
     public static function fetch_user_badges($userid) {
         global $DB, $CFG;
 
-        $cache = \cache::make('local_showbadges', 'user_badges');
-        if ($user_badges = $cache->get($userid)) {
-            return $user_badges;
-        }
-
-        $sql = "SELECT b.id, b.name, b.description, ub.dateissued, ub.badgeid, p.progress FROM {badge_issued} ub JOIN {badge} b ON ub.badgeid = b.id LEFT JOIN {local_showbadges_progress} p ON b.id = p.badgeid AND p.userid = ub.userid WHERE ub.userid = :userid";
+        $sql = "SELECT b.id, b.name, b.description, ub.dateissued, ub.badgeid, p.progress 
+            FROM {badge_issued} ub 
+            JOIN {badge} b ON ub.badgeid = b.id 
+            LEFT JOIN {local_showbadges_progress} p ON b.id = p.badgeid AND p.userid = ub.userid 
+            WHERE ub.userid = :userid";
 
         $params = ['userid' => $userid];
         $user_badges = $DB->get_records_sql($sql, $params);
@@ -39,8 +38,6 @@ class badge_fetcher {
             $badge->imageurl = self::get_badge_image_url($badge->badgeid);
         }
 
-        $cache->set($userid, $user_badges);
-        
         return $user_badges;
     }
 
