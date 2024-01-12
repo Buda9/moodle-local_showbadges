@@ -5,8 +5,8 @@ $tasks = array(
     array(
         'classname' => 'local_showbadges\\task\\update_badge_progress',
         'blocking' => 0,
-        'minute' => '0',
-        'hour' => '2',
+        'minute' => '*/2',
+        'hour' => '*',
         'day' => '*',
         'dayofweek' => '*',
         'month' => '*'
