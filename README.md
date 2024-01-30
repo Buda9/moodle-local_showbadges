@@ -2,7 +2,7 @@
 
 The `local_showbadges` plugin is designed to enhance the Moodle LMS by displaying all available Moodle badges, as well as earned badge, in a single, responsive page.
 
-![Screenshot_36](https://github.com/Buda9/moodle-local_showbadges/assets/1422662/5b04972c-87c9-4ca1-8376-d417757aadf4)
+![Screenshot_88](https://github.com/Buda9/moodle-local_showbadges/assets/1422662/9e2ed732-62cf-4979-8d94-f33eda61bfd3)
 
 ## Features
 
