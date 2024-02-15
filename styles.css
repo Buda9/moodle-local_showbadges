@@ -13,64 +13,46 @@ margin-top:30px
 @media (max-width: 1024px) {
 .user-badge-container {
 grid-template-columns:repeat(3,1fr)
-}}
+}
+}
 
 @media (max-width: 768px) {
 .user-badge-container {
 grid-template-columns:repeat(2,1fr)
-}}
+}
+}
 
 @media (max-width: 480px) {
 .user-badge-container {
 grid-template-columns:1fr
-}}
+}
+}
+
+.achievement-info {
+font-size:18px;
+margin-top:20px
+}
 
 .user-badge {
-background-color: #fff;
-display: inline-grid;
-grid-auto-rows: minmax(60px,auto);
-border: 1px solid #D8D8D8;
-border-radius: 12px;
-margin: 10px;
-padding: 24px;
-text-align: center;
-transition: all 0.2s ease-in-out;
-height: 100%;
-width: 100%;
-align-items: start;
-align-content: baseline;
+align-content:baseline;
+align-items:start;
+background-color:#fff;
+border:1px solid #D8D8D8;
+border-radius:12px;
+display:inline-grid;
+grid-auto-rows:minmax(60px,auto);
+height:100%;
+margin:10px;
+padding:24px;
+text-align:center;
+transition:all .2s ease-in-out;
+width:100%
 }
 
-.user-badge:hover {
-transform: translateY(-3px);
-}
-
-.user-badge.earned-badge {
-border:3px solid green
-}
-
-.user-badge.unearned-badge {
-opacity:.7;
--webkit-filter: grayscale(100%);
--moz-filter: grayscale(100%);
-filter: grayscale(100%);
-transition: all 0.5s ease;
-}
-
-.user-badge.unearned-badge .user-badge-image:after {
-    content: "";
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>');
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 25px;
-    right: 95px;
-    opacity: .95;
-}
-
-.user-badge.unearned-badge:hover {
-opacity:.85
+.user-badge-description {
+color:#666;
+font-size:1em;
+font-weight:500
 }
 
 .user-badge-image img {
@@ -90,13 +72,34 @@ transition:all .2s ease-in-out;
 word-break:break-word
 }
 
-.user-badge-description {
-color:#666;
-font-size:1em;
-font-weight:500
+.user-badge.earned-badge {
+border:3px solid green
 }
 
-.achievement-info {
-    font-size: 18px;
-    margin-top: 20px;
+.user-badge.unearned-badge {
+-moz-filter:grayscale(100%);
+-webkit-filter:grayscale(100%);
+filter:grayscale(100%);
+opacity:.7;
+transition:all .5s ease
+}
+
+.user-badge.unearned-badge .user-badge-image:after {
+background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>');
+background-size:20px 20px;
+content:"";
+height:20px;
+opacity:.95;
+position:absolute;
+right:95px;
+top:25px;
+width:20px
+}
+
+.user-badge.unearned-badge:hover {
+opacity:.85
+}
+
+.user-badge:hover {
+transform:translateY(-3px)
 }
